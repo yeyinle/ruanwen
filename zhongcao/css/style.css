@@ -1,0 +1,461 @@
+﻿*{
+  margin:0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  font: 14rem/1 "微软雅黑"
+}
+
+img{
+  border:none
+}
+
+body{
+  background: rgb(248, 246, 246);
+}
+
+
+
+.detail-container{
+  margin:0 auto;
+  width: 7.50rem;
+  background: #fff;
+}
+
+.detail-container .detail-head{
+  display: flex;
+  width: 7.49rem;
+	height: 1.07rem;
+	box-shadow: 0.02rem 0.02rem 0.08rem 0rem 
+    rgba(133, 133, 133, 0.21);
+  box-sizing: border-box;
+  padding: 0.14rem 0.33rem 0 0.39rem;
+}
+
+.detail-container .detail-head .icon{
+  flex: 0 0 0.72rem;
+  margin-right: 0.18rem;
+  width: 0.72rem;
+  height: 0.72rem;
+}
+
+.detail-container .detail-head .icon img{
+  display: block;
+  width: 0.72rem;
+  height: 0.72rem;
+}
+
+
+.detail-container .detail-head .desc{
+  flex: 1;
+}
+
+.detail-container .detail-head .desc h2{
+  padding: 0.09rem 0 0.10rem;
+	font-size: 0.30rem;
+	color: #313131;
+}
+
+.detail-container .detail-head .desc h2 span{
+  font-family: ArialMT;
+	font-size: 0.27rem;
+}
+
+.detail-container .detail-head .desc p{
+	font-size: 0.22rem;
+	color: #9a9a9a;
+}
+
+.detail-container .detail-head .right-icon img{
+  display: block;
+  width: 0.63rem;
+  height: 0.65rem;
+}
+.content{
+  padding: 0.46rem 0.29rem 0;
+}
+
+.user-info{
+  display: flex;
+  padding-bottom: 0.15rem;
+  border-bottom: 1px rgb(235, 232, 232) solid;
+}
+
+.user-info .head{
+  flex: 0 0 0.87rem;
+  margin-right: 0.21rem;
+}
+
+.user-info .head img{ 
+  display: block;
+  width: 0.87rem;
+  height: 0.87rem;
+}
+
+.user-info .desc{
+  flex: 1;
+}
+
+.user-info .desc h2{
+  padding: 0.11rem 0 0.15rem;
+  font-size: 0.32rem;
+	line-height: 0.36rem;
+	color: #2a2a2a;
+}
+
+.user-info .desc p{
+  font-size: 0.26rem;
+	color: #2a2a2a;
+}
+
+.user-info .btn-wrapper{
+  padding: 0.15rem 0 0;
+}
+
+.user-info .btn-wrapper .btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.13rem;
+	height: 0.6rem;
+	border-radius: 26px;
+  border: solid 1px #ec6841;
+  font-size: 0.27rem;
+  color: #f0624b;
+  box-sizing: border-box;
+}
+
+.banner-wrapper {
+  margin: 0.38rem 0.60rem 0;
+  padding-bottom: 0.90rem;
+  overflow: hidden;
+}
+
+.c-detail-head{
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 0.11rem;
+  border-bottom: 1px #eeeeee solid;
+}
+
+.c-detail-head .left{
+  display: flex;
+  align-items: center;
+}
+.c-detail-head .users{
+  display: flex;
+}
+.c-detail-head .users img{
+  margin-left: -0.15rem;
+  display: block;
+  width: 0.36rem;
+  height: 0.36rem;
+}
+.c-detail-head img:first-child{
+  margin: 0;
+}
+
+.c-detail-head p{
+  padding-left: 0.16rem;
+  font-size: 0.26rem;
+  color: #030303;
+  font-weight: 500;
+}
+
+.c-detail-head .r{
+  display: flex;
+}
+
+.c-detail-head .r img{
+  display: block;
+  margin-right: 0.24rem;  
+}
+
+.c-detail-head .follow{
+  width: 0.35rem;
+  height: 0.31rem;
+}
+
+.c-detail-head .share{
+  width: 0.33rem;
+  height: 0.33rem;
+}
+.banner-wrapper img{
+  display: block;
+}
+
+.c-detail-context{
+  padding: 0.59rem 0 0.30rem;
+  border-bottom: 1px #eeeeee solid;
+}
+
+.c-detail-context .title{
+  font-size: 0.38rem;
+  color: #2a2a2a;
+  padding-bottom: 0.45rem;
+}
+
+.c-detail-context p{
+  font-size: 0.29rem;
+  line-height: 0.42rem;
+  color: #333333;
+  padding-bottom: 0.30rem;
+}
+
+.c-detail-context img{
+  display: block;
+  width: 100%;
+  margin-bottom: 0.20rem;
+}
+
+.c-detail-context .evaluation{
+  padding: 0.20rem 0 0.30rem;
+  border-bottom: solid 1px #eee;
+}
+.c-detail-context .evaluation img{
+  margin: 0 auto;
+  display: block;
+  width: 4rem;
+	height: 1rem;
+}
+
+.c-detail-context .num1{
+  padding: 0.40rem 0.40rem 0.2rem 0rem;
+  padding-left: 0.50rem;
+  background: url(../images/1.png) no-repeat left 0.43rem;
+  background-size: 0.39rem 0.38rem;
+  font-size: 0.32rem;
+	line-height: 0.48rem;
+  color: #2a2a2a;
+  font-weight: 700;
+}
+
+
+.c-detail-context .num2{
+  padding: 0.40rem 0.40rem 0.2rem 0rem;
+  padding-left: 0.50rem;
+  background: url(../images/2.png) no-repeat left 0.43rem;
+  background-size: 0.39rem 0.38rem;
+  font-size: 0.32rem;
+	line-height: 0.48rem;
+  color: #2a2a2a;
+  font-weight: 700;
+}
+.c-detail-context .num3{
+  padding: 0.40rem 0.40rem 0.2rem 0rem;
+  padding-left: 0.50rem;
+  background: url(../images/3.png) no-repeat left 0.43rem;
+  background-size: 0.39rem 0.38rem;
+  font-size: 0.32rem;
+	line-height: 0.48rem;
+  color: #2a2a2a;
+  font-weight: 700;
+}
+.c-detail-context .num4{
+  padding: 0.40rem 0.40rem 0.2rem 0rem;
+  padding-left: 0.50rem;
+  background: url(../images/4.png) no-repeat left 0.43rem;
+  background-size: 0.39rem 0.38rem;
+  font-size: 0.32rem;
+	line-height: 0.48rem;
+  color: #2a2a2a;
+  font-weight: 700;
+}
+.c-detail-context .num5{
+  padding: 0.40rem 0.40rem 0.2rem 0rem;
+  padding-left: 0.50rem;
+  background: url(../images/5.png) no-repeat left 0.43rem;
+  background-size: 0.39rem 0.38rem;
+  font-size: 0.32rem;
+	line-height: 0.48rem;
+  color: #2a2a2a;
+  font-weight: 700;
+}
+
+.c-detail-context .ok{
+  padding: 0.40rem 0;
+  padding-left: 0.50rem;
+  background: url(../images/ok.png) no-repeat left 0.43rem;
+  background-size: 0.39rem 0.38rem;
+  font-size: 0.32rem;
+	line-height: 0.48rem;
+  color: #2a2a2a;
+  font-weight: 700;
+}
+
+.img-placholder-wrapper{
+  width: 100%;
+  height: 3.00rem;
+  background: #cbcbcb;
+}
+
+.img-wrapper{
+  padding: 0 0.73rem;
+}
+.img-wrapper h3 {
+  text-align: center;
+}
+.img-wrapper h3 img{
+  width: 1.36rem;
+  height: 0.58rem;;
+}
+
+.comment-wrapper{
+  padding: 0.49rem 0 0;
+}
+
+.comment-input{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0 0.6rem;
+}
+
+.comment-input .input-wrapper{
+  position: relative;
+  padding-left: 0.73rem;
+  width: 4.8rem;
+	height: 0.52rem;
+	background-color: #f5f5f5;
+  border-radius: 26px;
+  box-sizing: border-box;
+}
+
+.comment-input .input-wrapper img{
+  position: absolute;
+  left: 0.29rem;
+  top: 0.10rem;
+  width: 0.32rem;
+  height: 0.32rem;
+}
+
+input{
+  outline: none;
+}
+
+.comment-input .input-wrapper input{
+  display: block;
+  border:none;
+  line-height: 0.52rem;
+  font-size: 0.20rem;
+  width: 96%;
+  background: none;
+}
+
+.comment-input .input-wrapper input::placeholder{
+  font-size: 0.20rem;
+	color: #b1b1b1;
+}
+
+.comment-input p{
+  font-size: 0.21rem;
+	color: #858484;
+}
+
+.comment-item{
+  padding: 0.14rem 0 0.20rem;
+  border-bottom: 1px #eeeeee solid;
+}
+
+.comment-item .comment-row{
+  padding: 0.20rem 0 0.20rem;
+  display: flex;
+}
+
+.comment-item .comment-row:nth-of-type(2){
+  padding-left: 0.67rem;
+}
+
+.comment-item .comment-row:nth-of-type(3){
+  padding-left: 0.67rem;  
+  border-top: 1px #e7e4e4 solid;
+}
+
+.comment-item .user-head{
+  margin-right: 0.13rem;
+  flex: 0 0 0.59rem;
+}
+
+.comment-item .user-head img{
+  display: block;
+  width: 0.59rem;
+  height: 0.59rem;
+}
+
+.comment-item .comment-desc{
+  flex: 1;
+}
+
+.comment-item .comment-desc .user-name{
+  font-size: 0.25rem;
+  color: #a9a9a9;
+  padding-bottom: 0.25rem;;
+}
+
+.comment-item .comment-desc  .comment-text .txt{
+  width: 5rem;
+  font-size: 0.29rem;
+	line-height: 0.40rem;
+	color: #000000;
+	opacity: 0.9;
+}
+
+.comment-item .comment-desc  .comment-text .txt2{
+  width: 4.20rem;
+  font-size: 0.29rem;
+	line-height: 0.40rem;
+	color: #000000;
+	opacity: 0.9;
+}
+
+.comment-item  .tag{
+  display: inline-block;
+  width: 0.65rem;
+	height: 0.35rem;
+	background-color: #f5f5f5;
+  border-radius: 18px;
+  font-size: 0.20rem;
+	line-height: 0.35rem;
+  color: #646464;
+  text-align: center;
+}
+
+.comment-item .comment-desc  .comment-text .date-title{
+  display: inline-block;
+  font-size: 0.23rem;
+	line-height: 0.36rem;
+	color: #a9a9a9;
+margin-left: 10px;
+}
+
+.comment-item .liked img{
+  display: block;
+  width: 0.38rem;
+  height: 0.38rem;
+}
+
+.comment-item .liked .liked-num{
+  padding-top: 0.14rem;
+  font-size: 0.22rem;
+	color: #1b1b1b;
+}
+
+.comment-item .more{
+  margin:0 0 0.20rem 1.28rem;
+	font-size: 0.26rem;
+  color: #5991e8;
+  cursor: pointer;
+}
+
+.check-more{
+  padding: 0.5rem 0 0.50rem;
+  text-align: center;
+ 
+}
+
+.check-more span{
+  display: block;
+  color: #5991e8;
+  font-size: 0.3rem;
+  font-weight: 400;
+}

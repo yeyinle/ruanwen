@@ -1,0 +1,17 @@
+.header {
+    width: 100%;
+    height: 2.5rem;
+    border-bottom: 1px solid #e9e9e9;
+    padding: 0 1rem;
+}
+.hot_icon {
+    width: 0.925rem;
+    height: 1.025rem;
+}
+.title {
+    font-size: 0.875rem;
+}
+.center_icon {
+    width: 0.825rem;
+    height: 0.875rem;
+}

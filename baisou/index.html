@@ -25,16 +25,73 @@
         </div>
 
         <div class="content">
-            <div class="list_box">
+            <div class="list_box" v-for="(item, index) in contentList" :key="index">
                 <div class="list_header flex justify-between align-center">
-                    
+                    <div class="flex justify-start align-center">
+                        <div class="avatar">
+                            <img :src="item.avatar" alt="">
+                        </div>
+                        <div class="flex flex-direction justify-center align-start">
+                            <div class="name flex justify-start align-center">
+                                <span>{{item.name}}</span>
+                                <img src="./img/zuanshi_icon.png" alt="">
+                            </div>
+                            <p class="occupation">{{item.occupation}}</p>
+                        </div>
+                    </div>
+                    <div class="close_icon">
+                        <img src="./img/close_icon.png" alt="" @click="showReason(index)">
+                        <div class="reason_box" style="display: none;" v-show="showReasonIndex == index">
+                            <p>选择理由，精准屏蔽</p>
+                            <ul>
+                                <li>不感兴趣</li>
+                                <li>不想看</li>
+                                <li>内容质量差</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-                <div class="list_content"></div>
+                <div class="list_content">
+                    <div class="video" v-if="item.videourl">
+                        <video :src="item.videourl"></video>
+                    </div>
+                    <div class="swiper-container" v-if="item.bannerlist.length > 0">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide" v-for="banner in item.bannerlist"><img :src="banner" alt=""></div>
+                        </div>
+                        <!-- 如果需要分页器 -->
+                        <div class="swiper-pagination"></div>
+                    </div>
+                    <div class="banner" v-if="item.bannerurl">
+                        <img :src="item.bannerurl" alt="">
+                    </div>
+                </div>
+                <div class="article">
+                    <div class="article_header flex justify-between align-center">
+                        <div class="article_avatar flex justify-start align-center">
+                            <img v-for="article_avatar in item.article_avatarlist" :src="article_avatar" alt="">
+                            <span>等{{item.rentong_count}}万人认同</span>
+                        </div>
+                        <div class="flex justify-end align-center">
+                            <img class="fav_icon" src="./img/fav_icon.png" alt="">
+                            <img class="comment_icon" src="./img/comment_icon.png" alt="">
+                        </div>
+                    </div>
+                    <div class="article_content">{{item.article_content}}</div>
+                    <div class="more_article" v-if="item.link"><img class="link_icon" src="./img/link_icon.jpg" alt="" v-if="item.link != '查看更多'">{{item.link}}</div>
+                </div>
+                <div class="comment">
+                    <div class="comment_num">共{{item.comment_count}}条评论</div>
+                    <ul class="comment_list">
+                        <li v-for="commentItem in item.comment_list"><span class="key">{{commentItem.key}}：</span><span class="val">{{commentItem.val}}</span></li>
+                    </ul>
+                </div>
             </div>
         </div>
 
         <div class="footer">
-
+            <div class="nomore_btn">没有更多内容了</div>
+            <div class="banquan">© 2020百度百搜 | 侵权举报</div>
         </div>
     </div>
 </body>

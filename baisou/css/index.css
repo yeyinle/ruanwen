@@ -48,15 +48,15 @@
     margin-top: 0.25rem;
 }
 .list_header .close_icon {
-    width: 0.775rem;
-    height: 0.6rem;
+    width: 0.975rem;
+    height: 0.8rem;
     position: relative;
 }
 .reason_box {
     position: absolute;
     right: 0;
     top: 1rem;
-    width: 130px;
+    width: 180px;
     border-radius: 10px;
     background: #fff;
     font-size: 12px;
@@ -83,7 +83,7 @@
 .reason_box li {
     height: 25px;
     line-height: 25px;
-    width: 90px;
+    width: 120px;
     border-radius: 5px;
     border: 1px solid #d4d4d4;
     color: #6e6e6e;
@@ -143,7 +143,7 @@
     padding-left: 0.75rem;
 }
 .comment_list {
-    margin: 0.5rem 0.25rem 0;
+    margin: 0.5rem 0.75rem 0;
     padding: 0.5rem 0.7rem;
     background: #f4f4f4;
     border-radius: 0.5rem;

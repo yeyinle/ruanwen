@@ -1,5 +1,19 @@
 
+window.alert = function (name) {
 
+            const iframe = document.createElement('IFRAME');
+    
+            iframe.style.display = 'none';
+    
+            iframe.setAttribute('src', 'data:text/plain,');
+    
+            document.documentElement.appendChild(iframe);
+    
+            window.frames[0].window.alert(name);
+    
+            iframe.parentNode.removeChild(iframe);
+    
+        };
 var app = new Vue({
     el: '#app',
     data: {
@@ -12,6 +26,7 @@ var app = new Vue({
                 bannerlist: [],
                 bannerurl: './img/banner1_1.jpg',
                 article_avatarlist: ['./img/avatar1_2.jpg','./img/avatar1_3.jpg','./img/avatar1_4.jpg'],
+                isFav: false,
                 rentong_count: 153,
                 article_content: '塑身衣真的有用吗 | 关于塑身衣的4个真相,听听陈教授是怎么说的。',
                 link: '查看更多',
@@ -28,6 +43,7 @@ var app = new Vue({
                 bannerlist: ['./img/banner2_1.jpg'],
                 bannerurl: '',
                 article_avatarlist: ['./img/avatar2_2.jpg','./img/avatar2_3.jpg','./img/avatar2_4.jpg'],
+                isFav: false,
                 rentong_count: 19,
                 article_content: '自《乘风破浪的姐姐》开播后,49岁的钟丽缇因“少女感”又冲上热搜,日前,她现身走机场，穿着粉色外套扎....',
                 link: '查看更多',
@@ -44,6 +60,7 @@ var app = new Vue({
                 bannerlist: [],
                 bannerurl: './img/banner3_1.jpg',
                 article_avatarlist: ['./img/avatar3_2.jpg','./img/avatar3_3.jpg','./img/avatar3_4.jpg'],
+                isFav: false,
                 rentong_count: 121,
                 article_content: '塑身衣到底有没有效果？今天就来和大家从原理讲解塑身衣。',
                 link: '什么叫做接触性抑制-百科解读',
@@ -60,6 +77,7 @@ var app = new Vue({
                 bannerlist: ['./img/banner4_1.jpg'],
                 bannerurl: '',
                 article_avatarlist: ['./img/avatar4_2.jpg','./img/avatar4_3.jpg','./img/avatar4_4.jpg'],
+                isFav: false,
                 rentong_count: 2.1,
                 article_content: '塑身衣真的是消费主义的陷阱，你认同吗？',
                 link: '',
@@ -76,6 +94,7 @@ var app = new Vue({
                 bannerlist: ['./img/banner5_1.jpg'],
                 bannerurl: '',
                 article_avatarlist: ['./img/avatar5_2.jpg','./img/avatar5_3.jpg','./img/avatar5_4.jpg'],
+                isFav: false,
                 rentong_count: 2.2,
                 article_content: '关于塑身衣的4个真相，上万元的塑身衣真的有用吗？？',
                 link: '查看更多',
@@ -92,6 +111,7 @@ var app = new Vue({
                 bannerlist: [],
                 bannerurl: './img/banner6_1.jpg',
                 article_avatarlist: ['./img/avatar6_2.jpg','./img/avatar6_3.jpg','./img/avatar6_4.jpg'],
+                isFav: false,
                 rentong_count: 1.3,
                 article_content: '坚持穿塑身衣对生活有什么改变？？',
                 link: '查看更多',
@@ -108,6 +128,7 @@ var app = new Vue({
                 bannerlist: [],
                 bannerurl: './img/banner7_1.jpg',
                 article_avatarlist: ['./img/avatar7_2.jpg','./img/avatar7_3.jpg','./img/avatar7_4.jpg'],
+                isFav: false,
                 rentong_count: 19.1,
                 article_content: '史上最全的塑身衣亲测评分，千万别买6分以下的塑身衣!',
                 link: '',
@@ -124,6 +145,7 @@ var app = new Vue({
                 bannerlist: ['./img/banner8_1.jpg'],
                 bannerurl: '',
                 article_avatarlist: ['./img/avatar8_2.jpg','./img/avatar8_3.jpg','./img/avatar8_4.jpg'],
+                isFav: false,
                 rentong_count: 3.6,
                 article_content: '塑身衣真的能变瘦吗？我连续穿了7周！',
                 link: '查看更多',
@@ -156,6 +178,13 @@ var app = new Vue({
                 this.showReasonIndex = index
             }
             
+        },
+        fav: function(index) {
+            this.contentList[index].isFav = !this.contentList[index].isFav
+        },
+        alertTip: function() {
+            alert('已提交，谢谢您的建议');
+            this.showReasonIndex = -1;
         }
     }
   })

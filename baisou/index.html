@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,user-scalable=0;"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>百搜TOP10精选</title>
     <link rel="stylesheet" href="./css/swiper-bundle.min.css">
-    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/common.css?v1">
     <link rel="stylesheet" href="./css/index.css">
 </head>
 <body>
@@ -34,7 +34,7 @@
                         <div class="flex flex-direction justify-center align-start">
                             <div class="name flex justify-start align-center">
                                 <span>{{item.name}}</span>
-                                <img src="./img/zuanshi_icon.png" alt="">
+                                <img src="./img/zuanshi_icon.png" alt="" style="vertical-align: top;">
                             </div>
                             <p class="occupation">{{item.occupation}}</p>
                         </div>
@@ -44,9 +44,9 @@
                         <div class="reason_box" style="display: none;" v-show="showReasonIndex == index">
                             <p>选择理由，精准屏蔽</p>
                             <ul>
-                                <li>不感兴趣</li>
-                                <li>不想看</li>
-                                <li>内容质量差</li>
+                                <li @click="alertTip();">不感兴趣</li>
+                                <li @click="alertTip();">不想看</li>
+                                <li @click="alertTip();">内容质量差</li>
                             </ul>
                         </div>
                     </div>
@@ -73,7 +73,8 @@
                             <span>等{{item.rentong_count}}万人认同</span>
                         </div>
                         <div class="flex justify-end align-center">
-                            <img class="fav_icon" src="./img/fav_icon.png" alt="">
+                            <img v-if="item.isFav" class="fav_icon" src="./img/fav_on_icon.png" alt="" @click="fav(index)">
+                            <img v-else class="fav_icon" src="./img/fav_icon.png" alt="" @click="fav(index)">
                             <img class="comment_icon" src="./img/comment_icon.png" alt="">
                         </div>
                     </div>
@@ -97,5 +98,5 @@
 </body>
 <script src="./js/vue.js"></script>
 <script src="./js/swiper-bundle.min.js"></script>
-<script src="./js/index.js"></script>
+<script src="./js/index.js?v1"></script>
 </html>

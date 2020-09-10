@@ -34,6 +34,51 @@ var app = new Vue({
                 comment_list: [
                     {key: '＠_＠怡情', val: '讲解的很清晰,明白了'},
                     {key: 'AUHiuYg', val: '就是因为不清楚塑身衣的情况才迟迟没买，这下可以放心了.....'}
+                ],
+                comment_tan: [
+                    {
+                        tan_avatar: './img/1/avatar1_1.jpg',
+                        tan_name: '勾小肥',
+                        tan_comment_content: '这种类型的地欧弟是打开看看这种类型的地欧弟是打开看看',
+                        isTanFav: false,
+                        tan_comment_count: 391,
+                        sec_comment_list: [
+                            {
+                                sec_avatar: './img/1/avatar1_1.jpg',
+                                sec_name: '勾小肥2',
+                                sec_comment_content: '这种类型的地欧弟是打开看看2这种类型的地欧弟是打开看看2',
+                                isTanFav2: false,
+                                sec_comment_count: 392
+                            },{
+                                sec_avatar: './img/1/avatar1_1.jpg',
+                                sec_name: '勾小肥3',
+                                sec_comment_content: '这种类型的地欧弟是打开看看3这种类型的地欧弟是打开看看3',
+                                isTanFav2: false,
+                                sec_comment_count: 393
+                            }
+                        ]
+                    },{
+                        tan_avatar: './img/1/avatar1_1.jpg',
+                        tan_name: '勾小肥',
+                        tan_comment_content: '这种类型的地欧弟是打开看看这种类型的地欧弟是打开看看',
+                        isTanFav: false,
+                        tan_comment_count: 391,
+                        sec_comment_list: [
+                            {
+                                sec_avatar: './img/1/avatar1_1.jpg',
+                                sec_name: '勾小肥2',
+                                sec_comment_content: '这种类型的地欧弟是打开看看2这种类型的地欧弟是打开看看2',
+                                isTanFav2: false,
+                                sec_comment_count: 392
+                            },{
+                                sec_avatar: './img/1/avatar1_1.jpg',
+                                sec_name: '勾小肥3',
+                                sec_comment_content: '这种类型的地欧弟是打开看看3这种类型的地欧弟是打开看看3',
+                                isTanFav2: false,
+                                sec_comment_count: 393
+                            }
+                        ]
+                    }
                 ]
             },{
                 avatar: './img/2/avatar2_1.jpg',
@@ -156,7 +201,10 @@ var app = new Vue({
                 ]
             }
         ],
-        showReasonIndex: -1
+        showReasonIndex: -1,
+        isShowComment_tan: false,
+        isShowComment_tanBg: false,
+        tan_commentData: {},
     },
     mounted: function() {
         var mySwiper = new Swiper ('.swiper-container', {
@@ -182,9 +230,41 @@ var app = new Vue({
         fav: function(index) {
             this.contentList[index].isFav = !this.contentList[index].isFav
         },
+        fav2: function(index) {
+            let thisData = this.tan_commentData.list[index]
+            if (thisData.isTanFav == false) {
+                thisData.tan_comment_count = ++thisData.tan_comment_count
+            } else {
+                thisData.tan_comment_count = --thisData.tan_comment_count
+            }
+            thisData.isTanFav = !thisData.isTanFav
+        },
+        fav3: function(index, secIndex) {
+            let thisData = this.tan_commentData.list[index].sec_comment_list[secIndex]
+            if (thisData.isTanFav2 == false) {
+                thisData.sec_comment_count = ++thisData.sec_comment_count
+            } else {
+                thisData.sec_comment_count = --thisData.sec_comment_count
+            }
+            thisData.isTanFav2 = !thisData.isTanFav2
+        },
         alertTip: function() {
             alert('已提交，谢谢您的建议');
             this.showReasonIndex = -1;
+        },
+        showComment_tan: function(index) {
+            this.isShowComment_tanBg = true
+            this.isShowComment_tan = true
+            this.tan_commentData.index = index
+            this.tan_commentData.count = this.contentList[index].comment_count
+            this.tan_commentData.list = this.contentList[index].comment_tan
+        },
+        closeComment_tan: function() {
+            let that =  this;
+            this.isShowComment_tan = false
+            setTimeout(function() {
+                that.isShowComment_tanBg = false
+            }, 500)
         }
     }
   })

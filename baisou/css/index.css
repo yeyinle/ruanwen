@@ -201,13 +201,13 @@
     background: #fff;
     bottom: 0;
     width: 100%;
-    max-height: 60vh;
+    padding-bottom: 3.8rem;
 }
 .tan_header {
     margin: 0 1rem;
     padding: 0.8rem 0 1.34rem;
     border-bottom: 1px solid #f5f5f5;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
 }
 .close2_icon {
     width: 0.625rem;
@@ -215,6 +215,8 @@
 }
 .tan_content {
     overflow-y: scroll;
+    height: 100%;
+    max-height: 12rem;
 }
 .tan_content li {
     padding: 0 1rem;
@@ -231,7 +233,7 @@
     flex-shrink: 0;
 }
 .tan_name1 {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     font-weight: bold;
     margin-top: 0.1rem;
 }
@@ -262,12 +264,16 @@
     flex-shrink: 0;
 }
 .tan_sec_comment .tan_name2 {
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     font-weight: bold;
     margin-top: 0.1rem;
 }
 .tan_footer {
     padding: 0.75rem 1rem;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: #fff;
 }
 .tan_input {
     width: 88%;
@@ -277,22 +283,31 @@
     border-radius: 100px;
 }
 .comment2_icon {
-    vertical-align: top;
+    vertical-align: middle;
     width: 1.225rem;
     height: 1.1rem;
     margin-left: 0.75rem;
     margin-right: 0.1rem;
 }
 .tan_input input {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     background: transparent;
     border: none;
+    height: 1.1rem;
+    line-height: 1.1rem;
 }
 .tan_input input::placeholder {
     font-style: italic;
     font-weight: bold;
+    font-family: 'Yuanti SC', 'FZXiYuan-M01S';
 }
 .tan_send {
     color: #3b77fc;
     font-size: 0.7rem;
+}
+.comment_slide-enter-active, .comment_slide-leave-active {
+    transition: bottom .5s;
+}
+.comment_slide-enter, .comment_slide-leave-to {
+    bottom: -60vh;
 }

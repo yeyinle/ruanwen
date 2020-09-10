@@ -273,6 +273,13 @@ var app = new Vue({
             setTimeout(function() {
                 that.isShowComment_tanBg = false
             }, 500)
+        },
+        toDetail: function(index) {
+            this.tan_commentData.index = index
+            this.tan_commentData.count = this.contentList[index].comment_count
+            this.tan_commentData.list = this.contentList[index].comment_tan
+            sessionStorage.setItem("commentData_" + index, JSON.stringify(this.tan_commentData));
+            window.location.href = "/ruanwen/baisou/zhongcao/index.html"
         }
     }
   })

@@ -79,7 +79,7 @@
                         </div>
                     </div>
                     <div class="article_content">{{item.article_content}}</div>
-                    <div class="more_article" v-if="item.link"><img class="link_icon" src="./img/link_icon.jpg" alt="" v-if="item.link != '查看更多'">{{item.link}}</div>
+                    <div class="more_article" v-if="item.link" @click="toDetail(index);"><img class="link_icon" src="./img/link_icon.jpg" alt="" v-if="item.link != '查看更多'">{{item.link}}</div>
                 </div>
                 <div class="comment">
                     <div class="comment_num">共{{item.comment_count}}条评论</div>

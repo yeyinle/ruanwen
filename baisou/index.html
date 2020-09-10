@@ -75,7 +75,7 @@
                         <div class="flex justify-end align-center">
                             <img v-if="item.isFav" class="fav_icon" src="./img/fav_on_icon.png" alt="" @click="fav(index)">
                             <img v-else class="fav_icon" src="./img/fav_icon.png" alt="" @click="fav(index)">
-                            <img class="comment_icon" src="./img/comment_icon.png" alt="">
+                            <img class="comment_icon" src="./img/comment_icon.png" alt="" @click="showComment_tan(index)">
                         </div>
                     </div>
                     <div class="article_content">{{item.article_content}}</div>

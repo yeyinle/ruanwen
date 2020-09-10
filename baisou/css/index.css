@@ -94,6 +94,9 @@
     color: #fff;
     border: none;
 }
+.video,video {
+    width: 100%;
+}
 .article {
     padding: 0.625rem 0.75rem 1.25rem 0.75rem;
 }

@@ -53,7 +53,7 @@
                 </div>
                 <div class="list_content">
                     <div class="video" v-if="item.videourl">
-                        <video :src="item.videourl"></video>
+                        <video :src="item.videourl" :poster="item.poster" controls></video>
                     </div>
                     <div class="swiper-container" v-if="item.bannerlist.length > 0">
                         <div class="swiper-wrapper">

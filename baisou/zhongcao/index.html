@@ -1349,423 +1349,119 @@
 <div class="f_container">
 	<div class="f_pl">
 		<div class="f_pl_title">评论部分</div>
-		<div class="f_pl_box">
-			<div class="f_pl_box_left"><img src="img/tou05.jpg" class="tx" /></div>
-			<div class="f_pl_box_right f_pl_xian">
-					<div class="f_pl_box_zan">
-						<img class="zan" src="img/c_xin.gif" />
-                        			<div class="wei">1632</div>
-					</div>
-				<div class="f_pl_box_right_title">乖露露的萌妹子</div>
-				<div class="f_pl_box_right_con">秀密斯S？到底是啥牌子，效果真好</div>
-				<div class="f_pl_box_right_data">
-  					<div class="data">2020-03-31</div>
-				</div>
-				<div class="f_pl_box_huifu">
-					<img src="img/tou06.jpg" class="tx" />
-					<div class="f_pl_box_huifu_right">
-						<div class="f_pl_box_zan">
-							<img class="zan" src="img/c_xin.gif" />
-							<div class="wei">836</div>
-						</div>
-						<div class="f_pl_box_huifu_title">喵小鱼</div>
- 						<div class="f_pl_box_huifu_con">
-    							<div class="con">秀密斯S就是秀密斯，看完就入手了，真的太适合我了这期的塑身衣测评</div>
-						</div>
-					</div>
-				</div>
+		<div class="tan_content">
 
+			<ul>
 
-				<div class="f_pl_box_huifu">
-					<img src="img/tou13.jpg" class="tx" />
-					<div class="f_pl_box_huifu_right">
-						<div class="f_pl_box_zan">
-							<img class="zan" src="img/c_xin.gif" />
-							<div class="wei">427</div>
+				<li v-for="(itm, idx) in tan_commentData.list">
+
+					<div class="flex justify-between align-center">
+
+						<div class="flex justify-start align-start">
+
+							<div class="tan_avatar1"><img :src="itm.tan_avatar" alt=""></div>
+
+							<div class="flex flex-direction justify-center align-start" style="width: 80%;">
+
+								<p class="tan_name1">{{itm.tan_name}}</p>
+
+								<p class="tan_comment_content">{{itm.tan_comment_content}}</p>
+
+							</div>
+
 						</div>
-						<div class="f_pl_box_huifu_title">鸽子小姐</div>
- 						<div class="f_pl_box_huifu_con">
-    							<div class="con">对，京东上买过，就是叫秀密斯，意大利品牌</div>
+
+						<div class="flex flex-direction justify-center align-center" @click="fav2(idx)">
+
+							<div class="fav_gray_icon">
+
+								<img v-if="itm.isTanFav" src="../img/fav_on_icon.png" alt="">
+
+								<img v-else src="../img/fav_gray_icon.png" alt="">
+
+							</div>
+
+							<p class="tan_comment_count">{{itm.tan_comment_count}}</p>
+
 						</div>
+
 					</div>
-				</div>
+
+					<div class="tan_sec_comment flex justify-between align-center" v-for="(secitm, secidx) in itm.sec_comment_list">
+
+						<div class="flex justify-start align-start">
+
+							<div class="tan_avatar2"><img :src="secitm.sec_avatar" alt=""></div>
+
+							<div class="flex flex-direction justify-center align-start" style="width: 80%;">
+
+								<p class="tan_name2">{{secitm.sec_name}}</p>
+
+								<p class="tan_comment_content">{{secitm.sec_comment_content}}</p>
+
+							</div>
+
+						</div>
+
+						<div class="flex flex-direction justify-center align-center" @click="fav3(idx, secidx)">
+
+							<div class="fav_gray_icon">
+
+								<img v-if="secitm.isTanFav2" src="../img/fav_on_icon.png" alt="">
+
+								<img v-else src="../img/fav_gray_icon.png" alt="">
+
+							</div>
+
+							<p class="tan_comment_count">{{secitm.sec_comment_count}}</p>
+
+						</div>
+
+					</div>
+
+				</li>
+
+			</ul>
+
 		</div>
-</div>
-
-
-		<div class="f_pl_box">
-			<div class="f_pl_box_left"><img src="img/tou02.jpg" class="tx" /></div>
-			<div class="f_pl_box_right f_pl_xian">
-					<div class="f_pl_box_zan">
-						<img class="zan" src="img/c_xin.gif" />
-                        			<div class="wei">1022</div>
-					</div>
-				<div class="f_pl_box_right_title">拉菲1800</div>
-				<div class="f_pl_box_right_con">请问产后穿塑身衣好不好？我是剖腹产的！！！</div>
-				<div class="f_pl_box_right_data">
-  					<div class="data">2020-03-30</div>
-				</div>
-
-				<div class="f_pl_box_huifu">
-					<img src="img/tou04.jpg" class="tx" />
-					<div class="f_pl_box_huifu_right">
-						<div class="f_pl_box_zan">
-							<img class="zan" src="img/c_xin.gif" />
-							<div class="wei">612</div>
-						</div>
-						<div class="f_pl_box_huifu_title">产后瑜伽Necy</div>
- 						<div class="f_pl_box_huifu_con">
-    							<div class="con">产后穿塑身衣我认为是有优势的，塑身衣可以稳定盆骨，减轻抱小孩或翻身时会对耻骨的疼痛感。如果是剖腹产妈妈，穿上塑身衣后伤口不会出现拉扯，带宝宝也会更舒服些。<br /><br />同时腰痛是产后非常普遍问题，穿上塑身衣给身体一个支撑点，腹部的肌肉就会有一个向后推力，腰椎稳定性就会更好。<br /><br />医学上也证明了，产后穿塑身衣对稳定盆骨、稳定腰椎能起到很好的作用。</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="f_pl_box_huifu">
-					<img src="img/tou03.jpg" class="tx" />
-					<div class="f_pl_box_huifu_right">
-						<div class="f_pl_box_zan">
-							<img class="zan" src="img/c_xin.gif" />
-							<div class="wei">53</div>
-						</div>
-						<div class="f_pl_box_huifu_title">杨冰冰</div>
- 						<div class="f_pl_box_huifu_con">
-    							<div class="con">可以的，我也是剖腹产后用的就是秀密斯，可以保护到伤口，缓解腰背痛，腰背挺直后感觉更精神了。</div>
-						</div>
-					</div>
-				</div>
-
-			</div>
-		</div>
-		
-		
-		
-		
-		<div class="f_pl_box">
-			<div class="f_pl_box_left"><img src="img/tou02.jpg" class="tx" /></div>
-			<div class="f_pl_box_right f_pl_xian">
-					<div class="f_pl_box_zan">
-						<img class="zan" src="img/c_xin.gif" />
-                        			<div class="wei">786</div>
-					</div>
-				<div class="f_pl_box_right_title">小猪角</div>
-				<div class="f_pl_box_right_con">种草一下购买渠道吧</div>
-				<div class="f_pl_box_right_data">
-  					<div class="data">2020-03-30</div>
-				</div>
-
-				<div class="f_pl_box_huifu">
-					<img src="img/tou18.jpg" class="tx" />
-					<div class="f_pl_box_huifu_right">
-						<div class="f_pl_box_zan">
-							<img class="zan" src="img/c_xin.gif" />
-							<div class="wei">102</div>
-						</div>
-						<div class="f_pl_box_huifu_title">白菜姐妹花</div>
- 						<div class="f_pl_box_huifu_con">
-    							<div class="con">油管上一直有人推荐秀密斯，没想到在京东也有旗舰店了</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="f_pl_box_huifu">
-					<img src="img/tou06.jpg" class="tx" />
-					<div class="f_pl_box_huifu_right">
-						<div class="f_pl_box_zan">
-							<img class="zan" src="img/c_xin.gif" />
-							<div class="wei">63</div>
-						</div>
-						<div class="f_pl_box_huifu_title">少女阿金</div>
- 						<div class="f_pl_box_huifu_con">
-    							<div class="con">收藏了求推荐，怎么买？</div>
-						</div>
-					</div>
-				</div>
-				<div class="f_pl_box_huifu">
-					<img src="img/tou09.jpg" class="tx" />
-					<div class="f_pl_box_huifu_right">
-						<div class="f_pl_box_zan">
-							<img class="zan" src="img/c_xin.gif" />
-							<div class="wei">41</div>
-						</div>
-						<div class="f_pl_box_huifu_title">小白呀</div>
- 						<div class="f_pl_box_huifu_con">
-    							<div class="con">哪能买到？救救我的腰吧</div>
-						</div>
-					</div>
-				</div>
-				<div class="f_pl_box_huifu">
-					<img src="img/tou14.jpg" class="tx" />
-					<div class="f_pl_box_huifu_right">
-						<div class="f_pl_box_zan">
-							<img class="zan" src="img/c_xin.gif" />
-							<div class="wei">24</div>
-						</div>
-						<div class="f_pl_box_huifu_title">可爱东东</div>
- 						<div class="f_pl_box_huifu_con">
-    							<div class="con">请问秀密斯S哪里可以买到？</div>
-						</div>
-						<div class="f_pl_more">还有14条类似回复</div>
-					</div>
-				</div>
-				
-			</div>
-		</div>		
-		
-		
-
-			<div class="f_pl_box">
-			<div class="f_pl_box_left"><img src="img/tou01.jpg" class="tx" /></div>
-			<div class="f_pl_box_right f_pl_xian">
-					<div class="f_pl_box_zan">
-						<img class="zan" src="img/c_xin.gif" />
-                        			<div class="wei">632</div>
-					</div>
-				<div class="f_pl_box_right_title">花花</div>
-				<div class="f_pl_box_right_con">无可否认，身形体态确实可以改变形象，但不是每个人都热衷健身，而塑身衣是很好的选择~</div>
-				<div class="f_pl_box_right_data xian">
-  					<div class="data">2020-03-31</div>
-				</div>
-			</div>
-		</div>
-
-
-		<div class="f_pl_box">
-			<div class="f_pl_box_left"><img src="img/tou07.jpg" class="tx" /></div>
-			<div class="f_pl_box_right f_pl_xian">
-					<div class="f_pl_box_zan">
-						<img class="zan" src="img/c_xin.gif" />
-                        			<div class="wei">429</div>
-					</div>
-				<div class="f_pl_box_right_title">哔哔哔粑粑</div>
-				<div class="f_pl_box_right_con">好强大的一篇测评，我想知道夏天穿热不热？</div>
-				<div class="f_pl_box_right_data">
-  					<div class="data">2020-03-30</div>
-				</div>
-				<div class="f_pl_box_huifu">
-					<img src="img/tou08.jpg" class="tx" />
-					<div class="f_pl_box_huifu_right">
-						<div class="f_pl_box_zan">
-							<img class="zan" src="img/c_xin.gif" />
-							<div class="wei">85</div>
-						</div>
-						<div class="f_pl_box_huifu_title">咚咚锵咚咚锵</div>
- 						<div class="f_pl_box_huifu_con">
-    							<div class="con">穿秀密斯感觉还好啊，而且现在到处都有空调，可以塑造腰身线条，上班穿工装特别需要。</div>
-						</div>
-					</div>
-				</div>
-				<div class="f_pl_box_huifu">
-					<img src="img/tou09.jpg" class="tx" />
-					<div class="f_pl_box_huifu_right">
-						<div class="f_pl_box_zan">
-							<img class="zan" src="img/c_xin.gif" />
-							<div class="wei">61</div>
-						</div>
-						<div class="f_pl_box_huifu_title">北鼻有梦</div>
- 						<div class="f_pl_box_huifu_con">
-    							<div class="con">我也是夏天都穿的，没感觉说会很热，反而那几个月瘦下来更多，体重也有明显下降，估计跟夏季人体代谢旺盛、体内循环加快有关。</div>
-							
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-
-		<div class="f_pl_box">
-			<div class="f_pl_box_left"><img src="img/tou10.jpg" class="tx" /></div>
-			<div class="f_pl_box_right f_pl_xian">
-					<div class="f_pl_box_zan">
-						<img class="zan" src="img/c_xin.gif" />
-                        			<div class="wei">439</div>
-					</div>
-				<div class="f_pl_box_right_title">Sunshine</div>
-				<div class="f_pl_box_right_con">有穿过这些牌子的仙女吗？有的出来说2句~~~~</div>
-				<div class="f_pl_box_right_data">
-  					<div class="data">2020-03-29</div>
-				</div>
-				<div class="f_pl_box_huifu">
-					<img src="img/tou11.jpg" class="tx" />
-					<div class="f_pl_box_huifu_right">
-						<div class="f_pl_box_zan">
-							<img class="zan" src="img/c_xin.gif" />
-							<div class="wei">58</div>
-						</div>
-						<div class="f_pl_box_huifu_title">KK</div>
- 						<div class="f_pl_box_huifu_con">
-    							<div class="con">美人JJ一看就是美人计，我之前入了一套，坑爹！穿不到2天就退了，塑形效果不好</div>
-						</div>
-					</div>
-				</div>
-				<div class="f_pl_box_huifu">
-					<img src="img/tou12.jpg" class="tx" />
-					<div class="f_pl_box_huifu_right">
-						<div class="f_pl_box_zan">
-							<img class="zan" src="img/c_xin.gif" />
-							<div class="wei">52</div>
-						</div>
-						<div class="f_pl_box_huifu_title">丁丁</div>
- 						<div class="f_pl_box_huifu_con">
-    							<div class="con">现在就是穿秀密斯，舒适也不会勒，我上班需要长期坐着，弓背的情况改善了很多。</div>
-							
-						</div>
-					</div>
-				</div>
-
-				<div class="f_pl_box_huifu">
-					<img src="img/tou13.jpg" class="tx" />
-					<div class="f_pl_box_huifu_right">
-						<div class="f_pl_box_zan">
-							<img class="zan" src="img/c_xin.gif" />
-							<div class="wei">23</div>
-						</div>
-						<div class="f_pl_box_huifu_title">有个小包</div>
- 						<div class="f_pl_box_huifu_con">
-    							<div class="con">qanme、美人计这样的效果，肯定是不会买了</div>
-							
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="f_pl_box">
-			<div class="f_pl_box_left"><img src="img/tou14.jpg" class="tx" /></div>
-			<div class="f_pl_box_right f_pl_xian">
-					<div class="f_pl_box_zan">
-						<img class="zan" src="img/c_xin.gif" />
-                        			<div class="wei">329</div>
-					</div>
-				<div class="f_pl_box_right_title">海绵宝宝</div>
-				<div class="f_pl_box_right_con">终于等到大麦这篇塑身衣测评了，棒棒棒，买它~~~ </div>
-				<div class="f_pl_box_right_data xian">
-  					<div class="data">2020-03-29</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="f_pl_box">
-			<div class="f_pl_box_left"><img src="img/tou15.jpg" class="tx" /></div>
-			<div class="f_pl_box_right f_pl_xian">
-					<div class="f_pl_box_zan">
-						<img class="zan" src="img/c_xin.gif" />
-                        			<div class="wei">267</div>
-					</div>
-				<div class="f_pl_box_right_title">甜心轰炸机</div>
-				<div class="f_pl_box_right_con">建议不要用谐音，直接把品牌名打出来不好吗？</div>
-				<div class="f_pl_box_right_data">
-  					<div class="data">2020-03-29</div>
-				</div>
-				<div class="f_pl_box_huifu">
-					<img src="img/tou16.jpg" class="tx" />
-					<div class="f_pl_box_huifu_right">
-						<div class="f_pl_box_zan">
-							<img class="zan" src="img/c_xin.gif" />
-							<div class="wei">47</div>
-						</div>
-						<div class="f_pl_box_huifu_title">南浔</div>
- 						<div class="f_pl_box_huifu_con">
-    							<div class="con">秀密斯，都知道啦，天猫和京东都有旗舰店</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="f_pl_box_huifu">
-					<img src="img/tou17.jpg" class="tx" />
-					<div class="f_pl_box_huifu_right">
-						<div class="f_pl_box_zan">
-							<img class="zan" src="img/c_xin.gif" />
-							<div class="wei">21</div>
-						</div>
-						<div class="f_pl_box_huifu_title">花生妹妹</div>
- 						<div class="f_pl_box_huifu_con">
-    							<div class="con">Leonisa、qanme芊尔美依、美人计、Spanx、婷美、秀密斯、micisty密汐皙迪</div>
-							
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="f_pl_box">
-			<div class="f_pl_box_left"><img src="img/tou18.jpg" class="tx" /></div>
-			<div class="f_pl_box_right f_pl_xian">
-					<div class="f_pl_box_zan">
-						<img class="zan" src="img/c_xin.gif" />
-                        			<div class="wei">156</div>
-					</div>
-				<div class="f_pl_box_right_title">我是小鱼</div>
-				<div class="f_pl_box_right_con">本来还在束腹带、连体衣、买不买有排扣这些上纠结，大麦这篇测评完美帮我解决好了，爱心</div>
-				<div class="f_pl_box_right_data">
-  					<div class="data">2020-03-28</div>
-				</div>
-				<div class="f_pl_box_huifu">
-					<img src="img/tou19.jpg" class="tx" />
-					<div class="f_pl_box_huifu_right">
-						<div class="f_pl_box_zan">
-							<img class="zan" src="img/c_xin.gif" />
-							<div class="wei">33</div>
-						</div>
-						<div class="f_pl_box_huifu_title">Shiny</div>
- 						<div class="f_pl_box_huifu_con">
-    							<div class="con">我也是，之前有试过束腹带，这次入手秀密斯，期待蜕变</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="f_pl_box_huifu">
-					<img src="img/tou20.png" class="tx" />
-					<div class="f_pl_box_huifu_right">
-						<div class="f_pl_box_zan">
-							<img class="zan" src="img/c_xin.gif" />
-							<div class="wei">29</div>
-						</div>
-						<div class="f_pl_box_huifu_title">大猫kiki</div>
- 						<div class="f_pl_box_huifu_con">
-    							<div class="con">二胎后穿的就是秀密斯，透气性真的很好</div>
-							
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="f_pl_box">
-			<div class="f_pl_box_left"><img src="img/tou21.png" class="tx" /></div>
-			<div class="f_pl_box_right f_pl_xian">
-					<div class="f_pl_box_zan">
-						<img class="zan" src="img/c_xin.gif" />
-                        			<div class="wei">109</div>
-					</div>
-				<div class="f_pl_box_right_title">小柴呀呀</div>
-				<div class="f_pl_box_right_con">想问穿了如何上厕所？</div>
-				<div class="f_pl_box_right_data">
-  					<div class="data">2020-03-28</div>
-				</div>
-
-                                <div class="f_pl_box_huifu">
-					<img src="img/tou06.jpg" class="tx" />
-					<div class="f_pl_box_huifu_right">
-						<div class="f_pl_box_zan">
-							<img class="zan" src="img/c_xin.gif" />
-							<div class="wei">36</div>
-						</div>
-						<div class="f_pl_box_huifu_title">Cherry</div>
- 						<div class="f_pl_box_huifu_con">
-    							<div class="con">裤裆位置有个开口的，内裤穿在塑身衣外面，我现在每天都习惯这样穿，感觉舒适，上厕所也跟平时一样。</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-
 	</div>
 	<div class="p_pl_login">- 登陆查看更多评论 -</div>
 </div>
 </body>
+<script src="../js/vue.min.js"></script>
 <script>
-	var commentData = sessionStorage.getItem("commentData_0"); 
-	console.log(JSON.parse(commentData))
+	var app = new Vue({
+		el: '.tan_content',
+		data: {
+			tan_commentData: {}
+		},
+		mounted: function() {
+			var commentData = sessionStorage.getItem("commentData_6") || '';
+			if (commentData != '') {
+				var data = commentData.replace(/\.\//g, "../")
+				this.tan_commentData = JSON.parse(data)
+			}
+		},
+		methods: {
+			fav2: function(index) {
+				let thisData = this.tan_commentData.list[index]
+				if (thisData.isTanFav == false) {
+					thisData.tan_comment_count = ++thisData.tan_comment_count
+				} else {
+					thisData.tan_comment_count = --thisData.tan_comment_count
+				}
+				thisData.isTanFav = !thisData.isTanFav
+			},
+			fav3: function(index, secIndex) {
+				let thisData = this.tan_commentData.list[index].sec_comment_list[secIndex]
+				if (thisData.isTanFav2 == false) {
+					thisData.sec_comment_count = ++thisData.sec_comment_count
+				} else {
+					thisData.sec_comment_count = --thisData.sec_comment_count
+				}
+				thisData.isTanFav2 = !thisData.isTanFav2
+			},
+		}
+	})
 </script>
 </html>

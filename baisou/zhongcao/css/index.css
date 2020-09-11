@@ -267,3 +267,361 @@ blockquote {
 .blockquote_article {
 	display: block
 }
+
+.tan_content {
+
+    height: 100%;
+
+}
+
+.tan_content li {
+
+    padding: 0 1rem;
+
+    margin-bottom: 2.15rem;
+
+}
+
+.tan_content li:first-child {
+
+    margin-top: 1.5rem;
+
+}
+
+.tan_avatar1 {
+
+    width: 1.7rem;
+
+    height: 1.7rem;
+
+    border-radius: 100%;
+
+    margin-right: 0.675rem;
+
+    flex-shrink: 0;
+
+}
+
+.tan_name1 {
+
+    font-size: 0.7rem;
+
+    font-weight: bold;
+
+    margin-top: 0.1rem;
+
+}
+
+.tan_comment_content {
+
+    font-size: 0.675rem;
+
+    color: #181818;
+
+    margin-top: 0.2rem;
+
+    line-height: 0.8rem;
+
+}
+
+.fav_gray_icon {
+
+    width: 0.8rem;
+
+    height: 0.7rem;
+
+}
+
+.tan_comment_count {
+
+    font-size: 0.6rem;
+
+    color: #9b9b9b;
+
+    margin-top: 0.3rem;
+
+}
+
+.tan_sec_comment {
+
+    padding-left: 2.375rem;
+
+    margin-top: 0.95rem;
+
+}
+
+.tan_sec_comment .tan_avatar2 {
+
+    width: 1.35rem;
+
+    height: 1.35rem;
+
+    border-radius: 100%;
+
+    margin-right: 0.675rem;
+
+    flex-shrink: 0;
+
+}
+
+.tan_sec_comment .tan_name2 {
+
+    font-size: 0.65rem;
+
+    font-weight: bold;
+
+    margin-top: 0.1rem;
+
+}
+
+/*flex box*/
+
+.flex {
+
+	display: flex;
+
+}
+
+
+
+.basis-xs {
+
+	flex-basis: 20%;
+
+}
+
+
+
+.basis-sm {
+
+	flex-basis: 40%;
+
+}
+
+
+
+.basis-df {
+
+	flex-basis: 50%;
+
+}
+
+
+
+.basis-lg {
+
+	flex-basis: 60%;
+
+}
+
+
+
+.basis-xl {
+
+	flex-basis: 80%;
+
+}
+
+
+
+.flex-sub {
+
+	flex: 1;
+
+}
+
+
+
+.flex-twice {
+
+	flex: 2;
+
+}
+
+
+
+.flex-treble {
+
+	flex: 3;
+
+}
+
+
+
+.flex-direction {
+
+	flex-direction: column;
+
+}
+
+
+
+.flex-wrap {
+
+	flex-wrap: wrap;
+
+}
+
+
+
+.align-start {
+
+	align-items: flex-start;
+
+}
+
+
+
+.align-end {
+
+	align-items: flex-end;
+
+}
+
+
+
+.align-center {
+
+	align-items: center;
+
+}
+
+
+
+.align-stretch {
+
+	align-items: stretch;
+
+}
+
+
+
+.self-start {
+
+	align-self: flex-start;
+
+}
+
+
+
+.self-center {
+
+	align-self: flex-center;
+
+}
+
+
+
+.self-end {
+
+	align-self: flex-end;
+
+}
+
+
+
+.self-stretch {
+
+	align-self: stretch;
+
+}
+
+
+
+.align-stretch {
+
+	align-items: stretch;
+
+}
+
+
+
+.justify-start {
+
+	justify-content: flex-start;
+
+}
+
+
+
+.justify-end {
+
+	justify-content: flex-end;
+
+}
+
+
+
+.justify-center {
+
+	justify-content: center;
+
+}
+
+
+
+.justify-between {
+
+	justify-content: space-between;
+
+}
+
+
+
+.justify-around {
+
+	justify-content: space-around;
+
+}
+@media screen and (min-width: 318.75px) {
+
+    body, html {font-size: 17px;}
+
+}
+
+@media screen and (min-width: 337.5px) {
+
+    body, html {font-size: 18px;}
+
+}
+
+@media screen and (min-width: 356.25px) {
+
+    body, html {font-size: 19px;}
+
+}
+
+@media screen and (min-width: 375px) {
+
+    body, html {font-size: 20px;}
+
+}
+
+@media screen and (min-width: 393.75px) {
+
+    body, html {font-size: 21px;}
+
+}
+
+@media screen and (min-width: 412.5px) {
+
+    body, html {font-size: 22px;}
+
+}
+
+@media screen and (min-width: 431.25px) {
+
+    body, html {font-size: 23px;}
+
+}
+
+@media screen and (min-width: 450px) {
+
+    body, html {font-size: 24px;}
+
+}
+ol,ul {
+
+    list-style: none;
+
+}

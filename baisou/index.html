@@ -1,155 +1,307 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,user-scalable=0"/>
+
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>百搜TOP10精选</title>
+
+    <title>塑身衣Top10内容-百搜精选</title>
+
     <link rel="stylesheet" href="./css/swiper-bundle.min.css">
+
     <link rel="stylesheet" href="./css/common.css?v1">
+
     <link rel="stylesheet" href="./css/index.css">
+
 </head>
+
 <body>
+
     <div id="app">
 
+
+
         <div class="header flex justify-between align-center">
+
             <div class="hot_icon">
+
                 <img src="./img/hot_icon.png" alt="">
+
             </div>
+
             <div class="title">
-                百搜TOP10精选
+
+                百搜精选Top10内容
+
             </div>
+
             <div class="center_icon">
+
                 <img src="./img/center_icon.png" alt="">
+
             </div>
+
         </div>
+
+
 
         <div class="content">
+
             <div class="list_box" v-for="(item, index) in contentList" :key="index">
+
                 <div class="list_header flex justify-between align-center">
+
                     <div class="flex justify-start align-center">
+
                         <div class="avatar">
+
                             <img :src="item.avatar" alt="">
+
                         </div>
+
                         <div class="flex flex-direction justify-center align-start">
+
                             <div class="name flex justify-start align-center">
+
                                 <span>{{item.name}}</span>
+
                                 <img src="./img/zuanshi_icon.png" alt="" style="vertical-align: top;">
+
                             </div>
+
                             <p class="occupation">{{item.occupation}}</p>
+
                         </div>
+
                     </div>
+
                     <div class="close_icon">
+
                         <img src="./img/close_icon.png" alt="" @click="showReason(index)">
+
                         <div class="reason_box" style="display: none;" v-show="showReasonIndex == index">
+
                             <p>选择理由，精准屏蔽</p>
+
                             <ul>
+
                                 <li @click="alertTip();">不感兴趣</li>
+
                                 <li @click="alertTip();">不想看</li>
+
                                 <li @click="alertTip();">内容质量差</li>
+
                             </ul>
+
                         </div>
+
                     </div>
+
                 </div>
+
+                <div class="article_content">{{item.article_content}}<div class="more_article" v-if="item.link.text" @click="toDetail(index);"><img class="link_icon" src="./img/link_icon.jpg" alt="">{{item.link.text}}</div></div>
+
                 <div class="list_content">
+
                     <div class="video" v-if="item.videourl">
+
                         <video :src="item.videourl" :poster="item.poster" x5-playsinline="" playsinline="" webkit-playsinline="" preload="none" controls></video>
+
                     </div>
+
                     <div class="swiper-container" v-if="item.bannerlist.length > 0">
+
                         <div class="swiper-wrapper">
+
                             <div class="swiper-slide" v-for="banner in item.bannerlist"><img :src="banner" alt=""></div>
+
                         </div>
+
                         <!-- 如果需要分页器 -->
+
                         <div class="swiper-pagination"></div>
+
                     </div>
+
                     <div class="banner" v-if="item.bannerurl">
+
                         <img :src="item.bannerurl" alt="">
+
                     </div>
+
                 </div>
+
                 <div class="article">
+
                     <div class="article_header flex justify-between align-center">
+
                         <div class="article_avatar flex justify-start align-center">
+
                             <img v-for="article_avatar in item.article_avatarlist" :src="article_avatar" alt="">
+
                             <span>等{{item.rentong_count}}万人认同</span>
+
                         </div>
+
                         <div class="flex justify-end align-center">
+
                             <img v-if="item.isFav" class="fav_icon" src="./img/fav_on_icon.png" alt="" @click="fav(index)">
+
                             <img v-else class="fav_icon" src="./img/fav_icon.png" alt="" @click="fav(index)">
+
                             <img class="comment_icon" src="./img/comment_icon.png" alt="" @click="showComment_tan(index)">
+
                         </div>
+
                     </div>
-                    <div class="article_content">{{item.article_content}}</div>
-                    <div class="more_article" v-if="item.link" @click="toDetail(index);"><img class="link_icon" src="./img/link_icon.jpg" alt="" v-if="item.link != '查看更多'">{{item.link}}</div>
+
                 </div>
+
                 <div class="comment">
-                    <div class="comment_num">共{{item.comment_count}}条评论</div>
+
+                    <!-- <div class="comment_num">共{{item.comment_count}}条评论</div> -->
+
                     <ul class="comment_list" @click="showComment_tan(index)">
+
                         <li v-for="commentItem in item.comment_list"><span class="key">{{commentItem.key}}：</span><span class="val">{{commentItem.val}}</span></li>
+
                     </ul>
+
                 </div>
+
             </div>
+
         </div>
+
+
 
         <div class="footer">
-            <div class="nomore_btn">没有更多内容了</div>
+
+            <div class="nomore_btn">以上信息来自598万用户实名推荐</div>
+
             <div class="banquan">© 2020百度百搜 | 侵权举报</div>
+
         </div>
 
+
+
         <div class="comment_tan_bg" v-show="isShowComment_tanBg" @click.self="closeComment_tan();">
+
             <transition name="comment_slide">
+
                 <div class="comment_tan" v-show="isShowComment_tan">
+
                     <div class="tan_header flex justify-between align-center">
+
                         <div>共{{tan_commentData.count}}条评论</div>
+
                         <div class="close2_icon" @click="closeComment_tan();"><img src="./img/close2_icon.png" alt=""></div>
+
                     </div>
+
                     <div class="tan_content">
+
                         <ul>
+
                             <li v-for="(itm, idx) in tan_commentData.list">
+
                                 <div class="flex justify-between align-center">
+
                                     <div class="flex justify-start align-start">
+
                                         <div class="tan_avatar1"><img :src="itm.tan_avatar" alt=""></div>
+
                                         <div class="flex flex-direction justify-center align-start" style="width: 80%;">
+
                                             <p class="tan_name1">{{itm.tan_name}}</p>
+
                                             <p class="tan_comment_content">{{itm.tan_comment_content}}</p>
+
                                         </div>
+
                                     </div>
+
                                     <div class="flex flex-direction justify-center align-center" @click="fav2(idx)">
+
                                         <div class="fav_gray_icon">
+
                                             <img v-if="itm.isTanFav" src="./img/fav_on_icon.png" alt="">
+
                                             <img v-else src="./img/fav_gray_icon.png" alt="">
+
                                         </div>
+
                                         <p class="tan_comment_count">{{itm.tan_comment_count}}</p>
+
                                     </div>
+
                                 </div>
+
                                 <div class="tan_sec_comment flex justify-between align-center" v-for="(secitm, secidx) in itm.sec_comment_list">
+
                                     <div class="flex justify-start align-start">
+
                                         <div class="tan_avatar2"><img :src="secitm.sec_avatar" alt=""></div>
+
                                         <div class="flex flex-direction justify-center align-start" style="width: 80%;">
+
                                             <p class="tan_name2">{{secitm.sec_name}}</p>
+
                                             <p class="tan_comment_content">{{secitm.sec_comment_content}}</p>
+
                                         </div>
+
                                     </div>
+
                                     <div class="flex flex-direction justify-center align-center" @click="fav3(idx, secidx)">
+
                                         <div class="fav_gray_icon">
+
                                             <img v-if="secitm.isTanFav2" src="./img/fav_on_icon.png" alt="">
+
                                             <img v-else src="./img/fav_gray_icon.png" alt="">
+
                                         </div>
+
                                         <p class="tan_comment_count">{{secitm.sec_comment_count}}</p>
+
                                     </div>
+
                                 </div>
+
                             </li>
+
                         </ul>
+
                     </div>
+
                     <div class="tan_footer flex justify-between align-center">
+
                         <div class="tan_input flex justify-start align-center"><img class="comment2_icon" src="./img/comment2_icon.png" alt=""><input type="text" placeholder="喜欢就评论"></div>
+
                         <div class="tan_send">发送</div>
+
                     </div>
+
                 </div>
+
             </transition>
+
         </div>
+
     </div>
+
 </body>
+
 <script src="./js/vue.js"></script>
+
 <script src="./js/swiper-bundle.min.js"></script>
+
 <script src="./js/index.js?v1"></script>
+
 </html>

@@ -20,16 +20,16 @@
         <div class="intro"> </div>
         <ul class="cats">
             <li class="active">
-                <a href="/about.html">公司简介</a>
+                <a href="/about.php">公司简介</a>
             </li>
             <li>
-                <a href="/culture.html">企业文化</a>
+                <a href="/culture.php">企业文化</a>
             </li>
             <li>
-                <a href="/honor.html">资质荣誉</a>
+                <a href="/honor.php">资质荣誉</a>
             </li>
             <li>
-                <a href="/contact.html">联系我们</a>
+                <a href="/contact.php">联系我们</a>
             </li>
         </ul>
     </div>

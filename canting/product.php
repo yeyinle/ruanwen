@@ -19,13 +19,13 @@
                     <a href="/product/">全部</a>
                 </li>
                 <li>
-                    <a href="/product/list-1.html">菜品分类1</a>
+                    <a href="/product/list-1.php">菜品分类1</a>
                 </li>
                 <li>
-                    <a href="/product/list-2.html">菜品分类2</a>
+                    <a href="/product/list-2.php">菜品分类2</a>
                 </li>
                 <li>
-                    <a href="/product/list-3.html">菜品分类3</a>
+                    <a href="/product/list-3.php">菜品分类3</a>
                 </li>
             </ul>
         </div>
@@ -142,8 +142,8 @@
             <div class="pages">
                 <em>&nbsp;9&nbsp;</em>
                 <strong>1</strong>
-                <a href="/product/index-2.html">2</a>
-                <a href="/product/index-2.html" class="next">下页</a>
+                <a href="/product/index-2.php">2</a>
+                <a href="/product/index-2.php" class="next">下页</a>
             </div>
         </div>
     </div>
